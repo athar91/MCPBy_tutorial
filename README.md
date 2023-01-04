@@ -7,6 +7,7 @@
 metalpdb2mol2.py -i ca.pdb -o mol2 ca.mol2 -c 1
 
 **4. Run MCPBYMCPB.py **
+
 MCPBYMCPB.py -i input.in -s 1
 ********input.in**********
 original_pdb protein_clean.pdb
