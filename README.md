@@ -11,12 +11,19 @@ metalpdb2mol2.py -i ca.pdb -o mol2 ca.mol2 -c 1
 MCPBYMCPB.py -i input.in -s 1
 
 ********input.in**********
+
 original_pdb protein_clean.pdb
+
 group_name 4ZF6
+
 cut_off 2.8
+
 ion_ids **
+
 software_version g16
+
 ion_mol2files ca.mol2
+
 ***********
 you will get multiple gaussian input files.
 
