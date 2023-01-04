@@ -1,12 +1,13 @@
 # MCPBy_tutorial
 #1. make a cleaned and renumbered pdb with metal (using pdb4amber)
 
-#2. export metal coordinate in ca.pdb file
+**2. export metal coordinate in ca.pdb file**
 
-#3. generate mol2 file with charge (-c *)
+**3. generate mol2 file with charge (-c *)**
 metalpdb2mol2.py -i ca.pdb -o mol2 ca.mol2 -c 1
 
-#4. Run MCPBYMCPB.py -i input.in -s 1
+**4. Run MCPBYMCPB.py **
+MCPBYMCPB.py -i input.in -s 1
 ********input.in**********
 original_pdb protein_clean.pdb
 group_name 4ZF6
@@ -17,7 +18,7 @@ ion_mol2files ca.mol2
 ***********
 you will get multiple gaussian input files.
 
-#5. Run gaussian for small_opt
+**5. Run gaussian for small_opt**
 g09 < MOL_small_opt.com > MOL_small_opt.log
 g09 < MOL_small_fc.com > MOL_small_fc.log
 formchk MOL_small_opt.chk MOL_small_opt.fchk
