@@ -19,6 +19,7 @@ ion_mol2files ca.mol2
 you will get multiple gaussian input files.
 
 **5. Run gaussian for small_opt**
+
 g09 < MOL_small_opt.com > MOL_small_opt.log
 g09 < MOL_small_fc.com > MOL_small_fc.log
 formchk MOL_small_opt.chk MOL_small_opt.fchk
