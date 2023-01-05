@@ -40,6 +40,22 @@ Perform the Merz-Kollman RESP charge calculation for the large model:
 
 g09 < MOL_large_mk.com > MOL_large_mk.log
 
+MCPB.py -i input.in -s 2
+MCPB.py -i input.in -s 3
+MCPB.py -i input.in -s 4
+
+tleap -s -f MOL_tleap.in > MOL_tleap.out #you might solvate or change the box inside the tleap file 
+
+run parmed to convert it into gromacs
+
+************
+import parmed as pmd
+parm = pmd.load_file('MOL_solv.prmtop','MOL_solv.inpcrd')
+parm.save('protein_qm_prep.itp',format='gromacs')
+parm.save('protein_qm_prep.gro')
+parm.save('protein_qm_prep.top') #,format='gromacs')
+*************
 There is a bug in Gaussian09 rev B.01 when doing the Merz-Kollman population analysis. Please following the "Gaussian 09 fix" section in the Bug Fix Webpage to solve the problem.
+#You might consider changing the basis set based on metal, you can use pseudopotential. lanl2dz can be a perfect choice.
 
 https://ambermd.org/tutorials/advanced/tutorial20/mcpbpy_heme.htm
